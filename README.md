@@ -1,2 +1,2 @@
-# GamePig-project
-my js practice
+# My js practice
+
