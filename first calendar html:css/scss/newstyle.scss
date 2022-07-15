@@ -1,0 +1,319 @@
+$color-yellow: #fef0d5;
+$color-blue: #235c55;
+$color-red: #db1c50;
+$color-grey: #dbdbdb;
+$color-grey-dark: #525053;
+
+@mixin universal-style () {
+    cursor: crosshair;
+}
+
+body {
+    margin: 0%;
+    font-family: sans-serif;
+    @include universal-style();
+}
+
+.header-region {
+    background: $color-yellow;
+    padding: 8px;
+    margin-bottom: 32px;
+    @include universal-style();
+
+    .layout {
+        display: flex;
+        padding: 8px;
+        align-items: center;
+        
+        @media (max-width: 450px) {
+            flex-wrap: wrap;
+            text-align: center;
+        }
+    }
+
+    .site-name {
+        margin: 11px 0 0 20px;
+
+        @media (max-width: 450px) {
+            flex-wrap: wrap;
+            margin: -20px 0 0 0;
+        }
+    }
+
+    .share-calendar {
+        
+        margin-left: auto;
+        margin-right: 16px;
+        margin-top: 5px;
+
+        @media (max-width: 450px) {
+            margin: 0 auto;
+        }
+    }
+
+    .social-network {
+        text-align: center;
+        margin-top: 13px;
+        height: 18.39px;
+    }
+
+    .site-logo {
+        padding-top: 7px;
+        margin-left: -9px;
+
+        @media (max-width: 450px) {
+            margin: 0 auto;
+            
+        }
+    }
+
+    .site-logo .image-logo {
+        @media (max-width: 450px) {
+        width: 50px;
+        height: 50px;
+        }
+    }
+
+}
+
+.site-name {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: $color-blue;
+    
+    .Title {
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 0px;
+    }
+    
+    .description {
+    font-size: 16px;
+    margin-top: 5px;
+    }
+}
+
+
+.main-button {
+    background: $color-red;
+    font-family: sans-serif;
+    color: $color-yellow;
+    text-decoration: none; 
+    font-size: 14px;
+    padding: 5px 11px;
+    border-radius: 14px;
+    font-weight: 600;
+    border: 0;
+    cursor: pointer;
+    transition: background 2s;
+
+    &:hover {
+        background: darken($color-red, 40%);
+        color: $color-grey-dark;
+        transition: 2s;
+    }
+    
+    &.-big {
+     font-size: 20px;
+     font-weight: normal;
+     border-radius: 20px;
+    }
+}
+
+
+
+.image-logo {
+    margin: 0px 0px 0px -3px;
+    float: left;
+    height: 98px;
+    width: 102px;
+}
+
+ 
+.color-choise {
+
+    @include universal-style();
+
+    .label {
+        margin-left: 4px;
+        margin-bottom: 4px;
+    }
+
+    .dropdown {
+        font-weight: lighter;
+        padding: 5px;
+        border: 1px solid $color-grey;
+        border-radius: 5px;
+        margin: 0px 0px 0px 4px;
+        background-color: ghostwhite;
+}
+
+}
+
+.control-panel {
+    margin-bottom: 30px;
+}
+
+
+
+._container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.label {
+    margin-left: 4px;
+    margin-bottom: 4px;
+}
+
+
+
+.calendar {
+    border: 1px solid $color-blue;
+    border-radius: 10px;
+    padding: 15px 10px;
+
+    
+    
+}
+
+.calendar-list .layout {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    margin-left: -25px;
+}
+
+.register-region {
+   margin: 50px 0;
+   padding: 50px 0px;
+   background: black url('../carp.jpeg') center no-repeat; 
+   background-size: cover;
+   background-position: 0%;
+
+   .form-normal {
+    opacity: 0;
+    transition: 1.5s;
+   }
+
+   &:hover .form-normal {
+     animation: showform 0.5s forwards;
+     opacity: 1;
+     transition: 1.5s;
+   }
+}
+
+.form-normal {
+    
+    .input, .select {
+        display:block;
+        width: 220px;
+        border: 1px solid $color-grey;
+        padding: 5px;
+        box-shadow: 6px 1px 1px 1px $color-grey-dark;
+        margin: 12px auto;
+        height: 33px;
+        box-sizing: border-box;
+    }
+
+    .checkbox, .radio {
+        display: block;
+        width: 220px;
+        margin: 0 auto;
+        color: aliceblue;
+    }
+
+
+    .checkbox {
+        color: $color-yellow;
+        cursor: pointer; 
+        margin-bottom: 10px;
+    }
+
+    .submit {
+        display: block;
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+}
+
+@keyframes showform {
+    0% { margin-left: -2000px; }
+    100% { margin-left: 0; }
+}
+
+.calendar-list {
+
+    ._container {
+
+        .single-calendar {
+            color: $color-grey-dark;
+            width: 275px;
+            height: 365px;
+            margin-left: 20px;
+        }    
+            
+        .monthname {
+            color: $color-grey-dark;
+            text-align: center;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 190%;
+            margin: 10px;
+        }
+                
+            
+        .calendarcontrol {
+            visibility: hidden;
+        }
+            
+        &:hover .calendarcontrol {
+        visibility: visible;
+        font-size: 12px;
+        vertical-align: middle;
+        cursor: pointer;
+                    
+        &:hover {
+        color: $color-red;
+        }
+                
+        }
+            
+        .weekdays {
+            color: lighten($color-grey-dark, 40%)
+                    
+        }
+             
+        .dayname {
+            font-weight: normal;
+            text-align: center;
+        }
+            
+        .dayname:last-child {
+            color: $color-red;
+        }
+            
+        .daynumber {
+            font-weight: 350;
+            padding: 15px 8px 15px 8px;
+            text-align: center;
+            &:last-child {
+            color: $color-red;
+        }
+        &:hover {
+            background-color: $color-yellow;
+            cursor: pointer;
+            }
+        }
+            
+                
+                
+            
+        
+            
+
+        
+    
+    }
+
+    
+}
+
